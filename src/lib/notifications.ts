@@ -74,7 +74,7 @@ export function showEveningReminder(): void {
 }
 
 /**
- * Schedule morning notification for 7am
+ * Schedule morning notification for 9am
  */
 export function scheduleMorningNotification(): void {
     if (!hasNotificationPermission()) return;
@@ -86,9 +86,9 @@ export function scheduleMorningNotification(): void {
 
     const now = new Date();
     const morning = new Date();
-    morning.setHours(7, 0, 0, 0);
+    morning.setHours(9, 0, 0, 0);
 
-    // If already past 7am, schedule for tomorrow
+    // If already past 9am, schedule for tomorrow
     if (now >= morning) {
         morning.setDate(morning.getDate() + 1);
     }
