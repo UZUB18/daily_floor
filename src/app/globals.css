@@ -509,6 +509,30 @@ a:focus-visible {
   animation: stamp var(--duration-slower) var(--ease-out-back) forwards;
 }
 
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Stagger children */
 .stagger-children>* {
   opacity: 0;

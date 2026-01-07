@@ -20,6 +20,7 @@ import { StreakStrip } from '@/components/StreakStrip';
 import { CompletionStamp } from '@/components/CompletionStamp';
 import { ExerciseModal } from '@/components/ExerciseModal';
 import { AdjustPanel } from '@/components/AdjustPanel';
+import { ExerciseLibrary } from '@/components/ExerciseLibrary';
 
 /**
  * Main Today screen - the core of the app
@@ -40,6 +41,7 @@ export default function TodayPage() {
   const [showCompletion, setShowCompletion] = useState(false);
   const [showExerciseModal, setShowExerciseModal] = useState<string | null>(null);
   const [showAdjustPanel, setShowAdjustPanel] = useState(false);
+  const [showLibrary, setShowLibrary] = useState(false);
   const [justCompleted, setJustCompleted] = useState(false);
 
   // Initialize
@@ -247,6 +249,16 @@ export default function TodayPage() {
             <Button
               variant="ghost"
               className="flex-1"
+              onClick={() => setShowLibrary(true)}
+            >
+              <svg className="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              Library
+            </Button>
+            <Button
+              variant="ghost"
+              className="flex-1"
               onClick={() => setShowAdjustPanel(true)}
             >
               <svg className="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -274,6 +286,11 @@ export default function TodayPage() {
         isOpen={showAdjustPanel}
         onClose={() => setShowAdjustPanel(false)}
         onSubmit={handleAdjust}
+      />
+
+      <ExerciseLibrary
+        isOpen={showLibrary}
+        onClose={() => setShowLibrary(false)}
       />
     </>
   );
