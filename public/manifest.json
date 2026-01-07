@@ -1,0 +1,21 @@
+{
+    "name": "Daily Floor",
+    "short_name": "Floor",
+    "description": "Make daily consistency effortless with a small, non-negotiable minimum workout.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FAFAFA",
+    "theme_color": "#33057F",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
