@@ -14,6 +14,7 @@ import {
 import { generateDailyFloor, toggleExerciseComplete, getToday, isFloorComplete } from '@/lib/floor-generator';
 import { markFloorCompleteAndUpdateStreak } from '@/lib/streak';
 import { adjustFloor } from '@/lib/adjustment';
+import { hapticTap, hapticCelebration } from '@/lib/haptics';
 import { Button } from '@/components/ui/Button';
 import { ExerciseCard } from '@/components/ExerciseCard';
 import { StreakCalendar } from '@/components/StreakCalendar';
@@ -96,6 +97,9 @@ export default function TodayPage() {
     setFloor(updatedFloor);
     saveDailyFloor(updatedFloor);
 
+    // Haptic feedback for toggle
+    hapticTap();
+
     // Check if floor just completed
     if (updatedFloor.completed && !floor.completed) {
       // Update streak
@@ -106,6 +110,9 @@ export default function TodayPage() {
       // Show completion animation
       setShowCompletion(true);
       setJustCompleted(true);
+
+      // Heavy haptic for completion
+      hapticCelebration();
     }
   }, [floor, streak]);
 
