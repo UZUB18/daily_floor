@@ -110,6 +110,9 @@ export interface Exercise {
 
     // Difficulty scaling
     difficultyLevel: number; // 1-5
+
+    // Visual guide
+    infographic?: string; // Path to infographic image
 }
 
 /**

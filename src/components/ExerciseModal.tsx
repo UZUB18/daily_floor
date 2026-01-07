@@ -34,31 +34,42 @@ export function ExerciseModal({ exerciseId, onClose }: ExerciseModalProps) {
                     </p>
                 </div>
 
-                {/* Instructions */}
+                {/* Instructions - Show infographic if available, otherwise text */}
                 <div>
                     <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
                         How to do it
                     </h4>
-                    <ol className="space-y-3">
-                        {exercise.instructions.map((instruction, i) => (
-                            <li key={i} className="flex gap-3">
-                                <span className="
-                  flex-shrink-0
-                  w-6 h-6
-                  bg-primary-100
-                  text-primary-700
-                  rounded-full
-                  flex items-center justify-center
-                  text-sm font-bold
-                ">
-                                    {i + 1}
-                                </span>
-                                <span className="text-gray-700 leading-relaxed">
-                                    {instruction}
-                                </span>
-                            </li>
-                        ))}
-                    </ol>
+                    {exercise.infographic ? (
+                        <div className="rounded-xl overflow-hidden bg-gray-50">
+                            <img
+                                src={exercise.infographic}
+                                alt={`${exercise.name} instructions`}
+                                className="w-full h-auto"
+                                loading="lazy"
+                            />
+                        </div>
+                    ) : (
+                        <ol className="space-y-3">
+                            {exercise.instructions.map((instruction, i) => (
+                                <li key={i} className="flex gap-3">
+                                    <span className="
+                      flex-shrink-0
+                      w-6 h-6
+                      bg-primary-100
+                      text-primary-700
+                      rounded-full
+                      flex items-center justify-center
+                      text-sm font-bold
+                    ">
+                                        {i + 1}
+                                    </span>
+                                    <span className="text-gray-700 leading-relaxed">
+                                        {instruction}
+                                    </span>
+                                </li>
+                            ))}
+                        </ol>
+                    )}
                 </div>
 
                 {/* Common Mistake */}

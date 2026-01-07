@@ -29,6 +29,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Diamond push-ups (hands close together)',
         contraindications: ['wrist', 'shoulder'],
         difficultyLevel: 2,
+        infographic: '/exercises/Pushups.png',
     },
     {
         id: 'push-ups-incline',
@@ -49,6 +50,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Standard push-ups',
         contraindications: ['wrist'],
         difficultyLevel: 1,
+        infographic: '/exercises/Incline_pushups.png',
     },
     {
         id: 'pike-push-ups',
@@ -69,6 +71,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Feet elevated pike push-ups',
         contraindications: ['wrist', 'shoulder', 'neck'],
         difficultyLevel: 3,
+        infographic: '/exercises/Pike_pushups.png',
     },
 
     // ============================================
@@ -93,6 +96,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Hold at top for 3-5 seconds',
         contraindications: ['lower-back', 'neck'],
         difficultyLevel: 2,
+        infographic: '/exercises/Supermans.png',
     },
     {
         id: 'prone-y-raises',
@@ -113,6 +117,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Hold each rep for 3 seconds',
         contraindications: ['shoulder', 'neck'],
         difficultyLevel: 2,
+        infographic: '/exercises/Prone_Y_Raises.png',
     },
 
     // ============================================
@@ -137,6 +142,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Pause squats (3-second hold at bottom)',
         contraindications: ['knee'],
         difficultyLevel: 2,
+        infographic: '/exercises/Squats.png',
     },
     {
         id: 'glute-bridges',
@@ -157,6 +163,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Single-leg glute bridges',
         contraindications: [],
         difficultyLevel: 1,
+        infographic: '/exercises/Glute_Bridges.png',
     },
     {
         id: 'reverse-lunges',
@@ -177,6 +184,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Walking lunges',
         contraindications: ['knee'],
         difficultyLevel: 2,
+        infographic: '/exercises/Reverse_Lunges.png',
     },
 
     // ============================================
@@ -201,6 +209,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Plank with shoulder taps',
         contraindications: ['wrist', 'shoulder'],
         difficultyLevel: 2,
+        infographic: '/exercises/Plank.png',
     },
     {
         id: 'dead-bugs',
@@ -221,6 +230,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Slow 3-count on each extension',
         contraindications: ['lower-back'],
         difficultyLevel: 2,
+        infographic: '/exercises/Dead_bugs.png',
     },
     {
         id: 'bird-dogs',
@@ -241,6 +251,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Hold each rep for 5 seconds',
         contraindications: ['wrist'],
         difficultyLevel: 1,
+        infographic: '/exercises/Bird_dogs.png',
     },
     {
         id: 'hollow-hold',
@@ -261,6 +272,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Rock gently while maintaining position',
         contraindications: ['lower-back', 'neck'],
         difficultyLevel: 3,
+        infographic: '/exercises/Hollow_Hold.png',
     },
     {
         id: 'mountain-climbers',
@@ -281,6 +293,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Cross-body mountain climbers',
         contraindications: ['wrist', 'shoulder'],
         difficultyLevel: 2,
+        infographic: '/exercises/Mountain_Climbers.png',
     },
 
     // ============================================
@@ -305,6 +318,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Add 3-second pause in each position',
         contraindications: ['wrist'],
         difficultyLevel: 1,
+        infographic: '/exercises/Cat_cow_flow.png',
     },
     {
         id: 'hip-circles',
@@ -325,6 +339,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'No support, larger circles',
         contraindications: ['knee'],
         difficultyLevel: 1,
+        infographic: '/exercises/Hip_circles.png',
     },
     {
         id: 'worlds-greatest-stretch',
@@ -345,6 +360,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Add hamstring stretch by straightening front leg',
         contraindications: ['knee', 'lower-back'],
         difficultyLevel: 2,
+        infographic: '/exercises/World\'s_greatest_strestch.png',
     },
     {
         id: 'thoracic-rotations',
@@ -365,6 +381,7 @@ export const EXERCISES: Exercise[] = [
         harderVariant: 'Hold each rotation for 5 seconds',
         contraindications: ['shoulder', 'lower-back'],
         difficultyLevel: 1,
+        infographic: '/exercises/Thoracic_rotations.png',
     },
 ];
 
