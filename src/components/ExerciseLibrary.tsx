@@ -119,43 +119,65 @@ export function ExerciseLibrary({ isOpen, onClose }: ExerciseLibraryProps) {
                             No exercises found with these filters
                         </div>
                     ) : (
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-2">
                             {filteredExercises.map(exercise => (
                                 <button
                                     key={exercise.id}
                                     onClick={() => setSelectedExercise(exercise)}
                                     className="
-                                        bg-white rounded-xl overflow-hidden shadow-sm
-                                        border border-gray-100 hover:border-primary-200
-                                        hover:shadow-md transition-all duration-200
-                                        text-left group
+                                        w-full p-4 rounded-2xl text-left
+                                        bg-white
+                                        border-2 border-transparent
+                                        hover:border-primary-200
+                                        shadow-sm hover:shadow-lg
+                                        transition-all duration-300
+                                        group
+                                        relative overflow-hidden
                                     "
+                                    style={{
+                                        background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(51, 5, 127, 0.1), rgba(51, 5, 127, 0.02)) border-box',
+                                    }}
                                 >
-                                    {/* Thumbnail */}
-                                    {exercise.infographic && (
-                                        <div className="aspect-[4/3] bg-gray-50 overflow-hidden">
-                                            <img
-                                                src={exercise.infographic}
-                                                alt={exercise.name}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                    )}
+                                    {/* Hover glow effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-primary-50/0 via-primary-50/50 to-primary-50/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                                    {/* Info */}
-                                    <div className="p-3">
-                                        <h3 className="font-semibold text-gray-900 text-sm leading-tight mb-1">
-                                            {exercise.name}
-                                        </h3>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-xs text-gray-500 capitalize">
-                                                {exercise.movementType}
-                                            </span>
-                                            <span className="text-xs">
-                                                {renderStars(exercise.difficultyLevel)}
-                                            </span>
+                                    <div className="relative flex items-center gap-4">
+                                        {/* Movement Type Icon */}
+                                        <div className={`
+                                            w-12 h-12 rounded-xl flex items-center justify-center
+                                            text-xl
+                                            ${exercise.movementType === 'push' ? 'bg-blue-100 text-blue-600' : ''}
+                                            ${exercise.movementType === 'pull' ? 'bg-green-100 text-green-600' : ''}
+                                            ${exercise.movementType === 'squat' || exercise.movementType === 'hinge' ? 'bg-orange-100 text-orange-600' : ''}
+                                            ${exercise.movementType === 'core' ? 'bg-purple-100 text-purple-600' : ''}
+                                            ${exercise.movementType === 'mobility' ? 'bg-teal-100 text-teal-600' : ''}
+                                        `}>
+                                            {exercise.movementType === 'push' && '💪'}
+                                            {exercise.movementType === 'pull' && '🔙'}
+                                            {(exercise.movementType === 'squat' || exercise.movementType === 'hinge') && '🦵'}
+                                            {exercise.movementType === 'core' && '🎯'}
+                                            {exercise.movementType === 'mobility' && '🧘'}
                                         </div>
+
+                                        {/* Exercise Info */}
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className="font-semibold text-gray-900 text-base group-hover:text-primary-700 transition-colors">
+                                                {exercise.name}
+                                            </h3>
+                                            <div className="flex items-center gap-2 mt-1">
+                                                <span className="text-xs text-gray-500 capitalize px-2 py-0.5 bg-gray-100 rounded-full">
+                                                    {exercise.movementType}
+                                                </span>
+                                                <span className="text-sm">
+                                                    {renderStars(exercise.difficultyLevel)}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* Arrow */}
+                                        <svg className="w-5 h-5 text-gray-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
                                     </div>
                                 </button>
                             ))}
