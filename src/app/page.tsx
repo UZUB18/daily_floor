@@ -15,6 +15,7 @@ import { generateDailyFloor, toggleExerciseComplete, getToday, isFloorComplete }
 import { markFloorCompleteAndUpdateStreak } from '@/lib/streak';
 import { adjustFloor } from '@/lib/adjustment';
 import { hapticTap, hapticCelebration } from '@/lib/haptics';
+import { initializeNotifications, scheduleEveningReminder } from '@/lib/notifications';
 import { Button } from '@/components/ui/Button';
 import { ExerciseCard } from '@/components/ExerciseCard';
 import { StreakCalendar } from '@/components/StreakCalendar';
@@ -84,6 +85,10 @@ export default function TodayPage() {
       }
 
       setLoading(false);
+
+      // Initialize notifications
+      const floorComplete = existingFloor?.completed || false;
+      initializeNotifications(floorComplete);
     };
 
     initializeApp();
@@ -113,6 +118,9 @@ export default function TodayPage() {
 
       // Heavy haptic for completion
       hapticCelebration();
+
+      // Cancel evening reminder since floor is done
+      scheduleEveningReminder(true);
     }
   }, [floor, streak]);
 
