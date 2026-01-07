@@ -16,7 +16,7 @@ import { markFloorCompleteAndUpdateStreak } from '@/lib/streak';
 import { adjustFloor } from '@/lib/adjustment';
 import { Button } from '@/components/ui/Button';
 import { ExerciseCard } from '@/components/ExerciseCard';
-import { StreakStrip } from '@/components/StreakStrip';
+import { StreakCalendar } from '@/components/StreakCalendar';
 import { CompletionStamp } from '@/components/CompletionStamp';
 import { ExerciseModal } from '@/components/ExerciseModal';
 import { AdjustPanel } from '@/components/AdjustPanel';
@@ -241,8 +241,8 @@ export default function TodayPage() {
             </div>
           )}
 
-          {/* Streak strip */}
-          <StreakStrip streakData={streak} />
+          {/* Streak calendar */}
+          <StreakCalendar streakData={streak} />
 
           {/* Actions */}
           <div className="flex gap-3">
